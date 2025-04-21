@@ -1,3 +1,28 @@
+<script>
+  document.querySelector("form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    try {
+      const response = await fetch(e.target.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "application/json" }
+      });
+      if (response.ok) {
+        alert("پیام شما ارسال شد!");
+        e.target.reset();
+      } else {
+        const error = await response.json();
+        console.error("خطا:", error);
+        alert("مشکلی در ارسال پیش آمد. لطفاً دوباره تلاش کنید.");
+      }
+    } catch (err) {
+      console.error("خطای شبکه:", err);
+      alert("اتصال اینترنت را بررسی کنید.");
+    }
+  });
+</script>
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
