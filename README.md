@@ -1,5 +1,3 @@
-# Radyabnegar-form
-html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -91,7 +89,7 @@ html
 <body>
     <div class="form-container">
         <h1 class="form-title">فرم ثبت اطلاعات</h1>
-        <form action="/submit" method="POST">
+        <form action="https://formspree.io/f/mehranfarkooosh@gmail.com" method="POST">
             <div class="form-group">
                 <label for="firstName">نام</label>
                 <input type="text" id="firstName" name="firstName" placeholder="نام خود را وارد کنید" required>
@@ -125,4 +123,3 @@ html
     </div>
 </body>
 </html>
-```
